@@ -1,0 +1,13 @@
+h1{
+	font-size: 3.6em;
+	width: 50%;
+	text-align: center;
+	margin: auto;
+}
+section{
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-ms-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}

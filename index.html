@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>H5前端框架</title>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/app_base.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript">
+		// 当设计图只有一个640px 的时候，可以直接将视口锁定为640px
+		if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+			var version = parseFloat(RegExp.$1);
+			if(version>2.3){
+				var phoneScale = parseInt(window.screen.width)/640;
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+			}else{
+				document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+			}
+		}else{
+			document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		//微信去掉下方刷新栏
+		if(navigator.userAgent.indexOf('MicroMessenger') >= 0){
+			document.addEventListener('WeixinJSBridgeReady', function() {
+				//WeixinJSBridge.call('hideToolbar');
+			});
+		}
+	</script>
+<script type="text/javascript">
+	document.onreadystatechange=function(){
+		if(document.readyState=='complete'){
+			console.log('加载完成');
+		}
+	}
+</script>
+</head>
+<body>
+	<section class="page show p-main" style="background:red">
+		<h1 class="animated fadeInLeft d2" data-tran="p-p">hello world</h1>
+	</section>
+	<section class="page p-p" style="background:blue">
+		<h2 class="animated rotateInDownLeft d2" data-tran="p-main">你好呀</h2>
+	</section>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/app_fn.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
