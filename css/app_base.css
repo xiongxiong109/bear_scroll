@@ -36,3 +36,59 @@ section{width: 100%;height: 100%;position: absolute;left: 0;top: 0;overflow: hid
 	-webkit-animation-delay: 2.3s;
 	animation-delay: 2.3s;
 }
+
+/*动画扩展*/
+
+/*coverOutUp*/
+.coverOutUp{
+	-webkit-animation: coverOutUp 1s forwards;
+	-o-animation: coverOutUp 1s forwards;
+	animation: coverOutUp 1s forwards;
+	z-index: -1;
+}
+
+@-webkit-keyframes coverOutUp{
+	from{
+		-webkit-transform:scale(1,1) translateY(0%);
+	}
+	to{
+		-webkit-transform:scale(0.5,0.5)  translateY(-100%) translateX(50%);
+	}
+
+}
+@keyframes coverOutUp{
+	from{
+		transform:scale(1,1) translateY(0%);
+	}
+	to{
+		transform:scale(0.5,0.5)  translateY(-100%) translateX(50%);
+	}
+
+}
+
+/*coverOutDown*/
+.coverOutDown{
+	-webkit-animation: coverOutDown 1s forwards;
+	-o-animation: coverOutDown 1s forwards;
+	animation: coverOutDown 1s forwards;
+	z-index: -1;
+}
+
+@-webkit-keyframes coverOutDown{
+	from{
+		-webkit-transform:scale(1,1) translateY(0%);
+	}
+	to{
+		-webkit-transform:scale(0.5,0.5)  translateY(100%) translateX(50%);
+	}
+
+}
+@keyframes coverOutDown{
+	from{
+		transform:scale(1,1) translateY(0%);
+	}
+	to{
+		transform:scale(0.5,0.5)  translateY(100%) translateX(50%);
+	}
+
+}
