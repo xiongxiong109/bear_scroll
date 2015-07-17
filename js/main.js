@@ -1,32 +1,31 @@
 $(function(){
 
-	$("h1").on("tap",function(){
-		swipePage( $( '.'+$(this).data('tran') ) , "bounceInUp","in");
-		swipePage( $(this).parent('section'), 'bounceOutUp',"out" );
+	var iCur=0;
+
+	$(".page").on("swipeUp",function(){
+
+		if(iCur>= $(".page").length-1 ){
+			iCur=0;
+		}
+		else{
+			iCur++;
+		}
+		swipePage( $(this), "coverOutUp",'out' );
+		swipePage( $(".page").eq(iCur),"slideInUp",'in' );
+
 	});
 
-	$("h2").on("tap",function(){
-		swipePage( $(".p-main"),"bounceInDown","in" );
-		swipePage( $(this).parent("section"),"bounceOutDown","out" );
+	$(".page").on("swipeDown",function(){
+
+		if(iCur<=0){
+			iCur=$(".page").length-1;
+		}
+		else{
+			iCur--;
+		}
+		swipePage( $(this), "coverOutDown",'out' );
+		swipePage( $(".page").eq(iCur),"slideInDown",'in' );
+
 	});
 
-
-	afterEnd( $("h1"), 'fadeInLeft','flash',function(){
-		afterEnd( $("h1"), 'flash','pulse',function(){
-			afterEnd( $("h1"),'pulse','rubberBand');
-		} );
-	});
-
-	$(".p-main").on("pageOut",function(){
-		$("h1").removeClass('rubberBand').addClass('fadeInLeft');
-	});
-
-	$(".p-main").on("pageIn",function(){
-
-		afterEnd( $("h1"), 'fadeInLeft','flash',function(){
-				afterEnd( $("h1"), 'flash','pulse',function(){
-					afterEnd( $("h1"),'pulse','rubberBand');
-				} );
-			});
-	});
 });

@@ -1,13 +1,53 @@
-h1{
-	font-size: 3.6em;
-	width: 50%;
-	text-align: center;
-	margin: auto;
+.page-wrap{
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
-section{
-	-webkit-transform-origin: left center;
-	-moz-transform-origin: left center;
-	-ms-transform-origin: left center;
-	-o-transform-origin: left center;
-	transform-origin: left center;
+.p-main{
+	background-color: #ccc;
+}
+.p-p{
+	background-color: #cd0000;
+}
+h1{
+	font-size: 50px;
+	color: transparent;
+	text-shadow:0px 0px 20px transparent;
+	-webkit-animation: blurIn 2s 1s linear forwards, skew 0.5s 3s ease infinite alternate;
+	-o-animation: blurIn 2s 1s linear forwards, skew 0.5s 3s ease infinite alternate;
+	animation: blurIn 2s 1s linear forwards, skew 0.5s 3s ease infinite alternate;
+}
+h2{
+	font-size: 40px;
+	opacity: 0;
+	-webkit-animation: fadeInDown 1s 1s forwards, rubberBand 2s 2s infinite;
+	-o-animation: fadeInDown 1s 1s forwards, rubberBand 2s 2s infinite;
+	animation: fadeInDown 1s 1s forwards, rubberBand 2s 2s infinite;
+}
+@-webkit-keyframes blurIn{
+	10%{
+		text-shadow:0px 0px 20px #ccc;
+	}
+	30%{
+		text-shadow:0px 0px 15px #ddd;
+	}
+	60%{
+		text-shadow:0px 0px 10px #550;
+		color: transparent;
+	}
+	100%{
+		text-shadow:0px 0px 50px #000;
+		color: #555;
+	}
+}
+
+@-webkit-keyframes skew{
+
+	from{
+		text-shadow:30px 0px 50px #000;
+	}
+	to{
+		text-shadow:-30px 0px 50px #000;
+	}
+
 }
